@@ -8,7 +8,23 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-<style>
+<style>.controls{
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 9999;
+}
+
+.controls button{
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+}
 :root{
     --spotify-green:#1DB954;
     --bg:#0f0f0f;
@@ -424,6 +440,9 @@ nextSlide();
 });
 
 </script>
-
+<div class="controls">
+  <button onclick="prevSlide()">⬅ Anterior</button>
+  <button onclick="nextSlide()">Próximo ➡</button>
+</div>
 </body>
 </html>
