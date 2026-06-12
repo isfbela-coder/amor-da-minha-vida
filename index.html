@@ -396,31 +396,26 @@ const bar = document.getElementById("bar");
 const totalSlides = 7;
 let current = 0;
 
-function updateSlide(){
+function updateSlide() {
+    container.style.transform =
+        `translateX(-${current * 100}vw)`;
 
-container.style.transform =
-`translateX(-${current * 100}vw)`;
-
-bar.style.width =
-`${((current + 1)/totalSlides)*100}%`;
+    bar.style.width =
+        `${((current + 1) / totalSlides) * 100}%`;
+    
+function nextSlide() {
+    if (current < totalSlides - 1) {
+        current++;
+        updateSlide();
+    }
 }
 
-function nextSlide(){
-
-if(current < totalSlides - 1){
-current++;
-updateSlide();
+function prevSlide() {
+    if (current > 0) {
+        current--;
+        updateSlide();
+    }
 }
-}
-
-function prevSlide(){
-
-if(current > 0){
-current--;
-updateSlide();
-}
-}
-
 document.addEventListener("keydown",(e)=>{
 
 if(e.key==="ArrowRight")
@@ -440,9 +435,6 @@ nextSlide();
 });
 
 </script>
-<div class="controls">
-  <button onclick="prevSlide()">⬅ Anterior</button>
-  <button onclick="nextSlide()">Próximo ➡</button>
-</div>
+
 </body>
 </html>
