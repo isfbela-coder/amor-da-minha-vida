@@ -377,23 +377,17 @@ Você é meu lugar favorito no mundo.
     te amo minha pipoquinha
 ❤️
 </p>
-<div id="container">
 
-<section class="slide gradient1">
-...
-</section>
-
-<section class="slide gradient2">
-...
-</section>
-
-</div>
 </div>
 
 </section>
 
 </div>
-
+<div class="controls">
+    <button onclick="prevSlide()">← Anterior</button>
+    <button onclick="nextSlide()">Próximo →</button>
+</div>
+    
 <div class="next-info">
 Clique ou use as setas ← →
 </div>
@@ -403,7 +397,8 @@ Clique ou use as setas ← →
 const container = document.getElementById("container");
 const bar = document.getElementById("bar");
 
-const totalSlides = 7;
+const totalSlides =
+document.querySelectorAll(".slide").length;
 let current = 0;
 
 function updateSlide() {
